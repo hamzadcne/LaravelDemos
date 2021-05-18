@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Restaurant;
 
 class RestoController extends Controller
 {
@@ -13,7 +14,9 @@ class RestoController extends Controller
      */
     public function index()
     {
-        //
+        //$restos = Restaurant::where('address','Constantine')->get();
+        $restos = Restaurant::find(2);
+        return json_encode($restos);
     }
 
     /**

@@ -34,3 +34,4 @@ Route::post('test', function () {
 
 //Route::get('order', 'OrderController@show');
 Route::apiResource('orders', 'OrderController');
+Route::apiResource('restos', 'RestoController');
