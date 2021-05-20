@@ -27,7 +27,10 @@ class RestoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $resto = new Restaurant;
+        $resto->name = $request->input('name');
+        $resto->address = $request->input('address');
+        $resto->save();
     }
 
     /**
