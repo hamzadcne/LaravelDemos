@@ -9,18 +9,29 @@ class CategoryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:sanctum')->only(['index']);;
+        $this->middleware('auth:sanctum');//->only(['index']);
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $categories = Category::all();
         return response(json_encode($categories));
+
+        $resto->save();
+
+        $request->file()->storeAs('public/images/resto/',$name);
+
+        $photo = new Photo;
+        $photo->name= $name;
+        $photo->type = 'resto';
+        $photo->id= $resto->id;
+
     }
+
 
     /**
      * Show the form for creating a new resource.

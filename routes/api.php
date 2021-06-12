@@ -38,6 +38,9 @@ Route::post('test', function () {
 Route::apiResource('orders', 'OrderController');
 Route::apiResource('restos', 'RestoController');
 Route::apiResource('categories', 'CategoryController');
+Route::apiResource('meals', 'MealController');
 
 Route::post('register','AuthController@register');
 Route::post('login','AuthController@login');
+
+Route::get('images/{type}/{id}','ImageController@fetch');
