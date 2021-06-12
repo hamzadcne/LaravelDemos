@@ -49,7 +49,7 @@ class MealController extends Controller
             $resizedImage->resize(null, 200, function ($constraint) {
                 $constraint->aspectRatio();
             });
-            $path = public_path('images/meal/' . $meal->id);
+            //$path = public_path('images/meal/' . $meal->id);
             //$resizedImage->save($path);
             $resizedImage->stream();
 
